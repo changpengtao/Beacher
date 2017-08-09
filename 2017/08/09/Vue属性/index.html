@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="vue学习中不知道哪种属性是干什么的，总结一下。  data computed computed与methods区别 computed与watch区别   props  datadata属性是vue中的数据属性，其定义方式如下： 12345678910111213141516171819var app = new Vue(&amp;#123;       data: &amp;#123;">
+<meta name="description" content="vue学习中不知道哪种属性是干什么的，总结一下。  data computed computed与methods区别 computed与watch区别   props  datadata属性是vue中的数据属性，其定义方式如下： 12345678910111213141516171819var vm = new Vue(&amp;#123;       data: &amp;#123;             m">
 <meta name="keywords" content="vue属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue属性总结">
 <meta property="og:url" content="http://yoursite.com/2017/08/09/Vue属性/index.html">
-<meta property="og:site_name" content="Beacher">
-<meta property="og:description" content="vue学习中不知道哪种属性是干什么的，总结一下。  data computed computed与methods区别 computed与watch区别   props  datadata属性是vue中的数据属性，其定义方式如下： 12345678910111213141516171819var app = new Vue(&amp;#123;       data: &amp;#123;">
+<meta property="og:site_name" content="常鹏涛">
+<meta property="og:description" content="vue学习中不知道哪种属性是干什么的，总结一下。  data computed computed与methods区别 computed与watch区别   props  datadata属性是vue中的数据属性，其定义方式如下： 12345678910111213141516171819var vm = new Vue(&amp;#123;       data: &amp;#123;             m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-09T10:35:02.751Z">
+<meta property="og:updated_time" content="2017-08-09T11:48:10.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue属性总结">
-<meta name="twitter:description" content="vue学习中不知道哪种属性是干什么的，总结一下。  data computed computed与methods区别 computed与watch区别   props  datadata属性是vue中的数据属性，其定义方式如下： 12345678910111213141516171819var app = new Vue(&amp;#123;       data: &amp;#123;">
+<meta name="twitter:description" content="vue学习中不知道哪种属性是干什么的，总结一下。  data computed computed与methods区别 computed与watch区别   props  datadata属性是vue中的数据属性，其定义方式如下： 12345678910111213141516171819var vm = new Vue(&amp;#123;       data: &amp;#123;             m">
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>vue属性总结 | Beacher</title>
+  <title>vue属性总结 | 常鹏涛</title>
   
 
 
@@ -176,7 +176,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Beacher</span>
+        <span class="site-title">常鹏涛</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -292,7 +292,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Beacher">
+      <meta itemprop="name" content="常鹏涛">
     </span>
 
     
@@ -383,19 +383,41 @@
 <li><a href="#props">props</a></li>
 </ul>
 <h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><p>data属性是vue中的数据属性，其定义方式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var app = new Vue(&#123;  </div><div class="line">     data: &#123;    </div><div class="line">         message: &apos;Hello Vue.js!&apos;</div><div class="line">     &#125;，</div><div class="line">     seen: true,</div><div class="line"> 	todos: [&#123;</div><div class="line"> 	    text: &apos;学习 JavaScript&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text: &apos;学习 Vue&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text:&apos;整个牛项目&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text: &apos;todos.push(&#123; text: &quot;新项目&quot;&#125;)&apos;</div><div class="line"> 	    &#125;</div><div class="line"> 	],</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;  </div><div class="line">     data: &#123;    </div><div class="line">         message: &apos;Hello Vue.js!&apos;</div><div class="line">     &#125;，</div><div class="line">     seen: true,</div><div class="line"> 	todos: [&#123;</div><div class="line"> 	    text: &apos;学习 JavaScript&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text: &apos;学习 Vue&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text:&apos;整个牛项目&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text: &apos;todos.push(&#123; text: &quot;新项目&quot;&#125;)&apos;</div><div class="line"> 	    &#125;</div><div class="line"> 	],</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
 <p>其引用方式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.message = &apos;Hello Vue.js!&apos;</div><div class="line"></div><div class="line">// 或者在template中，如：绑定到title属性上</div><div class="line">&lt;div v-bind:title=&quot;message&quot;&gt;&lt;/div&gt; </div><div class="line"></div><div class="line">// 也可用&#123;&#123;&#125;&#125;在模板中实现数据绑定</div><div class="line">&lt;div&gt; &#123;&#123; message &#125;&#125; &lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>Vue组件定义时，data必须是function：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var app = Vue.extend(&#123;  </div><div class="line">    data: function () &#123;    </div><div class="line">        return &#123; a: 1 &#125;  </div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p><a href="https://cn.vuejs.org/v2/guide/computed.html" target="_blank" rel="external">computed 就算属性参考</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var vm = Vue.extend(&#123;  </div><div class="line">    data: function () &#123;    </div><div class="line">        return &#123; a: 1 &#125;  </div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p><a href="https://cn.vuejs.org/v2/guide/computed.html" target="_blank" rel="external">computed 计算属性参考</a></p>
 <p>计算属性，实时响应的。</p>
 <p>定义方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example&quot;&gt;</div><div class="line">  &lt;p&gt;Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;/p&gt;</div><div class="line">  &lt;p&gt;Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var app = new Vue(&#123;  </div><div class="line">  computed: &#123;    </div><div class="line">    reversedMessage: function () &#123;</div><div class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;  </div><div class="line">  computed: &#123;    </div><div class="line">    reversedMessage: function () &#123;</div><div class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Original message: &quot;Hello&quot;</div><div class="line">Computed reversed message: &quot;olleH&quot;</div></pre></td></tr></table></figure>
-<h3 id="computed与methods区别"><a href="#computed与methods区别" class="headerlink" title="computed与methods区别"></a>computed与methods区别</h3>
+<h3 id="computed与methods区别"><a href="#computed与methods区别" class="headerlink" title="computed与methods区别"></a>computed与methods区别</h3><p>computed是计算属性，methods是方法。</p>
+<p>computed</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello&apos;</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    reversedMessage: function () &#123;</div><div class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>methods<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello&apos;</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">methods: &#123;</div><div class="line">  reversedMessage: function () &#123;</div><div class="line">    return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>我们可以将同一函数定义为一个 method 或者一个计算属性。对于最终的结果，两种方式确实是相同的。</p>
+<p>不同的是computed计算属性是基于它们的依赖进行缓存的。计算属性computed只有在它的相关依赖发生改变时才会重新求值。这就意味着只要message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。而对于method ，只要发生重新渲染，method 调用总会执行该函数。</p>
+<p>当有一个性能开销比较大的的计算属性 A ，它需要遍历一个极大的数组和做大量的计算。然后我们可能有其他的计算属性依赖于 A ，这时候，我们就需要缓存。</p>
+<p>但是，缓存也有自己的缺点：<br>也同样意味着下面的计算属性将不再更新，因为 Date.now() 不是响应式依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  now: function () &#123;</div><div class="line">    return Date.now()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<font size="4" color="red">总结：数据量大，需要缓存的时候用computed；每次确实需要重新加载，不需要缓存时用methods</font>
+
+
+<h3 id="computed与watch区别"><a href="#computed与watch区别" class="headerlink" title="computed与watch区别"></a>computed与watch区别</h3><p>Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：watch 属性。<br>当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch——特别是如果你之前使用过 AngularJS。然而，更好的想法是使用 computed 属性而不是命令式的 watch 回调。细想一下这个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;&#123;&#123; fullName &#125;&#125;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Foo&apos;,</div><div class="line">    lastName: &apos;Bar&apos;,</div><div class="line">    fullName: &apos;Foo Bar&apos;</div><div class="line">  &#125;,</div><div class="line">  watch: &#123;</div><div class="line">    firstName: function (val) &#123;</div><div class="line">      this.fullName = val + &apos; &apos; + this.lastName</div><div class="line">    &#125;,</div><div class="line">    lastName: function (val) &#123;</div><div class="line">      this.fullName = this.firstName + &apos; &apos; + val</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>上面代码是命令式的和重复的。将它与 computed 属性的版本进行比较：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Foo&apos;,</div><div class="line">    lastName: &apos;Bar&apos;</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    fullName: function () &#123;</div><div class="line">      return this.firstName + &apos; &apos; + this.lastName</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<font size="4" color="red">总结：尽量用computed计算属性来监视数据的变化，因为它本身就这个特性，用watch没有computed“自动”，手动设置使代码变复杂</font>
+
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props用于父组件向子组件中传递数据，其在组件中定义与使用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;child&apos;, &#123;</div><div class="line">  props: [&apos;myMessage&apos;],</div><div class="line">&#125;)</div><div class="line">&lt;child my-message=&quot;...&quot;&gt;</div><div class="line">&lt;child :my-message=&quot;tempValue&quot;&gt;</div></pre></td></tr></table></figure>
+<p><strong>注意：props中驼峰命名法而在组件属性中是短横线命名法</strong>。</p>
+
       
     </div>
     
@@ -613,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#data"><span class="nav-number">1.</span> <span class="nav-text">data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#computed"><span class="nav-number">2.</span> <span class="nav-text">computed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#computed与methods区别"><span class="nav-number">2.1.</span> <span class="nav-text">computed与methods区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#data"><span class="nav-number">1.</span> <span class="nav-text">data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#computed"><span class="nav-number">2.</span> <span class="nav-text">computed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#computed与methods区别"><span class="nav-number">2.1.</span> <span class="nav-text">computed与methods区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#computed与watch区别"><span class="nav-number">2.2.</span> <span class="nav-text">computed与watch区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#props"><span class="nav-number">3.</span> <span class="nav-text">props</span></a></li></ol></div>
             
 
           </div>
