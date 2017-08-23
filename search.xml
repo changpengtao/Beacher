@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[列表点击显示更多]]></title>
+      <url>/2017/08/22/%E5%88%97%E8%A1%A8%E7%82%B9%E5%87%BB%E6%98%BE%E7%A4%BA%E6%9B%B4%E5%A4%9A/</url>
+      <content type="html"><![CDATA[<p>类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失”</p>
+<a id="more"></a>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">   &lt;button&gt;展开&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;ul class=&quot;show&quot;&gt;</div><div class="line">   &lt;li&gt;我是第1个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第2个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第3个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第4个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第5个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第6个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第7个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第8个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第9个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第10个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第11个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第12个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第13个&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">$(function() &#123;</div><div class="line">		//对页中现有的class=show，在之后添加显示更多条，并绑定点击行为</div><div class="line">	$(&quot;.show&quot;).each(function() &#123;</div><div class="line">		//var showsize =$(this).attr(&quot;num&quot;);</div><div class="line">		var showsize = 5; //显示的个数 </div><div class="line">		var $children = $(this).children(&quot;li&quot;); //所有的li元素</div><div class="line">		if($children.length &gt; showsize) &#123; //如果li的长度大于要求显示的个数</div><div class="line">			for(var i = showsize; i &lt; $children.length; i++) &#123; //	循环出来不显示的个数</div><div class="line">				$children.eq(i).hide();</div><div class="line">			&#125;</div><div class="line">			$(&quot;button&quot;).click(function() &#123;</div><div class="line">				//show($children, showsize)</div><div class="line">				if(show($children, showsize) &lt;= 0) &#123;</div><div class="line">					//如果目标元素已经没有隐藏的子元素了，就隐藏“点击更多的按钮条”</div><div class="line">					$(this).hide();</div><div class="line">				&#125;;</div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">function show($children, n) &#123;</div><div class="line">	//显示某jquery元素下的前n个隐藏的子元素</div><div class="line">	var $hidden = $children.filter(&quot;:hidden&quot;); //隐藏的元素</div><div class="line">	var cnt = $hidden.length; //隐藏元素的个数</div><div class="line">	for(var i = 0; i &lt; n &amp;&amp; i &lt; cnt; i++) &#123;</div><div class="line">		$hidden.eq(i).show();</div><div class="line">	&#125;</div><div class="line">	return cnt - n; //返回还剩余的隐藏子元素的数量</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> JQuery </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jquery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vue路由遇到的问题(vue-router 2.0)]]></title>
+      <url>/2017/08/10/vue%E8%B7%AF%E7%94%B1%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>vue-router的使用和遇到的一些问题</p>
+<h3 id="引入-vue-router-并注册插件"><a href="#引入-vue-router-并注册插件" class="headerlink" title="引入 vue-router 并注册插件"></a>引入 vue-router 并注册插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import VueRouter from &apos;vue-router&apos;</div><div class="line"></div><div class="line">Vue.use(VueRouter)</div><div class="line">//不注册会报错 &lt;router-link&gt; - did you register the component correctly? For recursive components, make sure to provide the &quot;name&quot; option.</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;router-link to=&quot;/goods&quot;&gt;商品&lt;/router-link&gt;</div><div class="line">        &lt;router-link to=&quot;/ratings&quot;&gt;评论&lt;/router-link&gt;</div><div class="line">        &lt;router-link to=&quot;/seller&quot;&gt;商家&lt;/router-link&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;router-view&gt;&lt;/router-view&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">// 首先定义或者引入路由的组件</div><div class="line">// 方法一：直接定义路由组件</div><div class="line">const goods = &#123; template: &apos;&lt;p&gt;goods&lt;/p&gt;&apos; &#125;;</div><div class="line">const ratings = &#123; template: &apos;&lt;p&gt;ratings&lt;/p&gt;&apos; &#125;;</div><div class="line">const seller = &#123; template: &apos;&lt;p&gt;seller&lt;/p&gt;&apos; &#125;;</div><div class="line"></div><div class="line">// 方法二：import引入路由组件</div><div class="line">import goods from &apos;components/goods/goods&apos;;</div><div class="line">import ratings from &apos;components/ratings/ratings&apos;;</div><div class="line">import seller from &apos;components/seller/seller&apos;;</div><div class="line"></div><div class="line">// 然后定义路由(routes)，components还可以是Vue.extend()创建的</div><div class="line">const routes = [&#123;</div><div class="line">  path: &apos;/&apos;,</div><div class="line">  redirect: &apos;/goods&apos;</div><div class="line">  //默认goods页</div><div class="line">&#125;, &#123;</div><div class="line">  path: &apos;/goods&apos;,</div><div class="line">  component: goods</div><div class="line">&#125;, &#123;</div><div class="line">  path: &apos;/ratings&apos;,</div><div class="line">  component: ratings</div><div class="line">&#125;, &#123;</div><div class="line">  path: &apos;/seller&apos;,</div><div class="line">  component: seller</div><div class="line">&#125;]</div><div class="line"></div><div class="line">// 接着创建路由实例</div><div class="line">const router = new VueRouter(&#123;</div><div class="line">  // ES6缩写语法，相当于routes:routes</div><div class="line">  routes  </div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 最后创建vue实例并挂载</div><div class="line">const app = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  router</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 或者</div><div class="line">const app = new Vue(&#123;</div><div class="line">  router</div><div class="line">&#125;).$mount(&apos;#app&apos;)</div></pre></td></tr></table></figure>
+<p><a href="https://segmentfault.com/a/1190000007825106" target="_blank" rel="external">参考</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> vue.js </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vue属性总结]]></title>
+      <url>/2017/08/09/Vue%E5%B1%9E%E6%80%A7/</url>
+      <content type="html"><![CDATA[<p>vue学习中不知道哪种属性是干什么的，总结一下。</p>
+<ul>
+<li><a href="#data">data</a></li>
+<li><a href="#computed">computed</a><ul>
+<li><a href="#computed与methods区别">computed与methods区别</a></li>
+<li><a href="#computed与watch区别">computed与watch区别</a></li>
+</ul>
+</li>
+<li><a href="#props">props</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><p>data属性是vue中的数据属性，其定义方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;  </div><div class="line">     data: &#123;    </div><div class="line">         message: &apos;Hello Vue.js!&apos;</div><div class="line">     &#125;，</div><div class="line">     seen: true,</div><div class="line"> 	todos: [&#123;</div><div class="line"> 	    text: &apos;学习 JavaScript&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text: &apos;学习 Vue&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text:&apos;整个牛项目&apos;</div><div class="line"> 	    &#125;,</div><div class="line"> 	    &#123;</div><div class="line"> 	    text: &apos;todos.push(&#123; text: &quot;新项目&quot;&#125;)&apos;</div><div class="line"> 	    &#125;</div><div class="line"> 	],</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<p>其引用方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.message = &apos;Hello Vue.js!&apos;</div><div class="line"></div><div class="line">// 或者在template中，如：绑定到title属性上</div><div class="line">&lt;div v-bind:title=&quot;message&quot;&gt;&lt;/div&gt; </div><div class="line"></div><div class="line">// 也可用&#123;&#123;&#125;&#125;在模板中实现数据绑定</div><div class="line">&lt;div&gt; &#123;&#123; message &#125;&#125; &lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>Vue组件定义时，data必须是function：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var vm = Vue.extend(&#123;  </div><div class="line">    data: function () &#123;    </div><div class="line">        return &#123; a: 1 &#125;  </div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p><a href="https://cn.vuejs.org/v2/guide/computed.html" target="_blank" rel="external">computed 计算属性参考</a></p>
+<p>计算属性，实时响应的。</p>
+<p>定义方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example&quot;&gt;</div><div class="line">  &lt;p&gt;Original message: &quot;&#123;&#123; message &#125;&#125;&quot;&lt;/p&gt;</div><div class="line">  &lt;p&gt;Computed reversed message: &quot;&#123;&#123; reversedMessage &#125;&#125;&quot;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;  </div><div class="line">  computed: &#123;    </div><div class="line">    reversedMessage: function () &#123;</div><div class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Original message: &quot;Hello&quot;</div><div class="line">Computed reversed message: &quot;olleH&quot;</div></pre></td></tr></table></figure>
+<h3 id="computed与methods区别"><a href="#computed与methods区别" class="headerlink" title="computed与methods区别"></a>computed与methods区别</h3><p>computed是计算属性，methods是方法。</p>
+<p>computed</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello&apos;</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    reversedMessage: function () &#123;</div><div class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>methods<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: &#123;</div><div class="line">    message: &apos;Hello&apos;</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">methods: &#123;</div><div class="line">  reversedMessage: function () &#123;</div><div class="line">    return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>我们可以将同一函数定义为一个 method 或者一个计算属性。对于最终的结果，两种方式确实是相同的。</p>
+<p>不同的是computed计算属性是基于它们的依赖进行缓存的。计算属性computed只有在它的相关依赖发生改变时才会重新求值。这就意味着只要message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。而对于method ，只要发生重新渲染，method 调用总会执行该函数。</p>
+<p>当有一个性能开销比较大的的计算属性 A ，它需要遍历一个极大的数组和做大量的计算。然后我们可能有其他的计算属性依赖于 A ，这时候，我们就需要缓存。</p>
+<p>但是，缓存也有自己的缺点：<br>也同样意味着下面的计算属性将不再更新，因为 Date.now() 不是响应式依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">  now: function () &#123;</div><div class="line">    return Date.now()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<font size="4" color="red">总结：数据量大，需要缓存的时候用computed；每次确实需要重新加载，不需要缓存时用methods</font>
+
+
+<h3 id="computed与watch区别"><a href="#computed与watch区别" class="headerlink" title="computed与watch区别"></a>computed与watch区别</h3><p>Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：watch 属性。<br>当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch——特别是如果你之前使用过 AngularJS。然而，更好的想法是使用 computed 属性而不是命令式的 watch 回调。细想一下这个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;&#123;&#123; fullName &#125;&#125;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Foo&apos;,</div><div class="line">    lastName: &apos;Bar&apos;,</div><div class="line">    fullName: &apos;Foo Bar&apos;</div><div class="line">  &#125;,</div><div class="line">  watch: &#123;</div><div class="line">    firstName: function (val) &#123;</div><div class="line">      this.fullName = val + &apos; &apos; + this.lastName</div><div class="line">    &#125;,</div><div class="line">    lastName: function (val) &#123;</div><div class="line">      this.fullName = this.firstName + &apos; &apos; + val</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>上面代码是命令式的和重复的。将它与 computed 属性的版本进行比较：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#app&apos;,</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Foo&apos;,</div><div class="line">    lastName: &apos;Bar&apos;</div><div class="line">  &#125;,</div><div class="line">  computed: &#123;</div><div class="line">    fullName: function () &#123;</div><div class="line">      return this.firstName + &apos; &apos; + this.lastName</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<font size="4" color="red">总结：尽量用computed计算属性来监视数据的变化，因为它本身就这个特性，用watch没有computed“自动”，手动设置使代码变复杂</font>
+
+<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><p>props用于父组件向子组件中传递数据，其在组件中定义与使用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;child&apos;, &#123;</div><div class="line">  props: [&apos;myMessage&apos;],</div><div class="line">&#125;)</div><div class="line">&lt;child my-message=&quot;...&quot;&gt;</div><div class="line">&lt;child :my-message=&quot;tempValue&quot;&gt;</div></pre></td></tr></table></figure>
+<p><strong>注意：props中驼峰命名法而在组件属性中是短横线命名法</strong>。</p>
+<p>参考：</p>
+<p><a href="https://segmentfault.com/a/1190000008497910" target="_blank" rel="external">Vue数据相关属性总结</a></p>
+<p><a href="http://blog.csdn.net/xiaoninvhuang/article/details/70543602" target="_blank" rel="external"> methods和computed和watch的联系和区别</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> vue.js </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo next主题主页不显示全文]]></title>
+      <url>/2017/08/04/Hexo-Next%E4%B8%BB%E9%A2%98%E4%B8%BB%E9%A1%B5%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%85%A8%E6%96%87/</url>
+      <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Hexo的next博客主题，首页显示的文章列表，每一遍都是全文，不方便概览。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li>进入hexo博客项目的themes/next目录</li>
+<li>进入hexo博客项目的themes/next目录</li>
+<li>找到”auto_excerpt”，修改如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">auto_excerpt:</div><div class="line"><span class="built_in">enable</span>: <span class="literal">true</span></div><div class="line">length: 150</div></pre></td></tr></table></figure>
+<ul>
+<li>把enable改为对应的false改为true！</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> page </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo教程]]></title>
+      <url>/2017/08/04/Hexo%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="hexo-新建一篇文章给它添加分类和标签"><a href="#hexo-新建一篇文章给它添加分类和标签" class="headerlink" title="hexo 新建一篇文章给它添加分类和标签"></a>hexo 新建一篇文章给它添加分类和标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: Hexo教程</div><div class="line">date: 2017-08-04 11:21:33</div><div class="line">categories: <span class="string">"Hexo教程"</span> <span class="comment">#文章分类目录</span></div><div class="line">tags: </div><div class="line"> - 标签1</div><div class="line"> - 标签2</div></pre></td></tr></table></figure>
+<h3 id="hexo-新建一篇文章"><a href="#hexo-新建一篇文章" class="headerlink" title="hexo 新建一篇文章"></a>hexo 新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"新建一篇文章"</span></div></pre></td></tr></table></figure>
+<h3 id="hexo-主页面的文章列表中，博客内容全部显示出来而不是只显示文章一部分和-阅读全文》"><a href="#hexo-主页面的文章列表中，博客内容全部显示出来而不是只显示文章一部分和-阅读全文》" class="headerlink" title="hexo 主页面的文章列表中，博客内容全部显示出来而不是只显示文章一部分和 阅读全文》"></a>hexo 主页面的文章列表中，博客内容全部显示出来而不是只显示文章一部分和 阅读全文》</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在适当位置加上&lt;!--more--&gt;</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> Hexo教程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> page </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[写博客、发布文章]]></title>
+      <url>/2017/08/03/hello-world/</url>
+      <content type="html"><![CDATA[<p>用 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! 写博客！</p>
+<h2 id="新建一篇博客"><a href="#新建一篇博客" class="headerlink" title="新建一篇博客"></a>新建一篇博客</h2><h3 id="执行下面的命令"><a href="#执行下面的命令" class="headerlink" title="执行下面的命令"></a>执行下面的命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"第一篇文章"</span></div></pre></td></tr></table></figure>
+<h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g   // 生成</div></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d   // 部署到github</div></pre></td></tr></table></figure>
+]]></content>
+      
+        
+    </entry>
+    
+  
+  
+</search>
