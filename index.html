@@ -532,6 +532,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/vue-resourse将json输出实例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chry_ch">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://changpengtao.com/home/images/thumbs/06.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chry_ch Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/11/vue-resourse将json输出实例/" itemprop="url">vue-resourse 实例</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-11T11:21:33+08:00">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue-js/" itemprop="url" rel="index">
+                    <span itemprop="name">vue.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="vue-resourse将获取到的json输出"><a href="#vue-resourse将获取到的json输出" class="headerlink" title="vue-resourse将获取到的json输出"></a>vue-resourse将获取到的json输出</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">本地数据要放在 static 文件下</div></pre></td></tr></table></figure>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">   &lt;div class=<span class="string">"list-block media-list"</span>&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li v-for=<span class="string">"item in evelist"</span>&gt;</div><div class="line">			&lt;a href=<span class="string">""</span> class=<span class="string">"item-content card-bg external"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"item-media"</span>&gt; &lt;img v-bind:src=<span class="string">"item.img"</span>&gt; &lt;/div&gt;</div><div class="line">				&lt;div class=<span class="string">"item-inner"</span>&gt;</div><div class="line">				    &lt;div class=<span class="string">"item-title"</span> v-bind:title=<span class="string">"item.name"</span>&gt;&#123;&#123;item.name&#125;&#125;&lt;/div&gt;</div><div class="line">					&lt;div class=<span class="string">"item-subtitle"</span>&gt;</div><div class="line">					    &lt;i class=<span class="string">"iconfont"</span>&gt;&lt;/i&gt; &#123;&#123;item.time&#125;&#125;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;div class=<span class="string">"item-subtitle"</span>&gt;</div><div class="line">						&lt;i class=<span class="string">"iconfont"</span>&gt;&lt;/i&gt; &#123;&#123;item.place&#125;&#125;</div><div class="line">						&lt;div class=<span class="string">"item-info"</span>&gt;&#123;&#123;item.state&#125;&#125;&lt;/div&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/a&gt;</div><div class="line">		&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">   <span class="built_in">export</span> default &#123;</div><div class="line">	<span class="function"><span class="title">data</span></span>() &#123;</div><div class="line">		<span class="built_in">return</span> &#123;</div><div class="line">			evelist: []</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	<span class="function"><span class="title">created</span></span>() &#123;</div><div class="line">		// GET请求</div><div class="line">		this.<span class="variable">$http</span>.get(<span class="string">'../../../static/evelist.json'</span>).<span class="keyword">then</span>(response =&gt; &#123;</div><div class="line">			// 成功</div><div class="line">			<span class="keyword">for</span>(<span class="built_in">let</span> i = 0, len = response.body.evelist.length; i &lt; len; i++) &#123;</div><div class="line">				//已经获取json数组中的数据，接下来如何传递到前端页面中</div><div class="line">				//获取全部数据</div><div class="line">				<span class="built_in">let</span> evelist = response.body.evelist[i]</div><div class="line">				//获取数组中的部分数据</div><div class="line">                   var name = response.body.evelist[i].name;</div><div class="line">				</div><div class="line">				this.evelist.push(evelist);//添加到空数组</div><div class="line">			&#125;</div><div class="line">		&#125;)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">    &#123;</div><div class="line">  <span class="string">"evelist"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="string">"img"</span>: <span class="string">"http://changpengtao.com/home/images/thumbs/06.jpg"</span>,</div><div class="line">      <span class="string">"name"</span>: <span class="string">"活动1"</span>,</div><div class="line">      <span class="string">"time"</span>: <span class="string">"2017-9-9 周五"</span>,</div><div class="line">      <span class="string">"place"</span>: <span class="string">"北京"</span>,</div><div class="line">      <span class="string">"state"</span>: <span class="string">"已结束"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="string">"img"</span>: <span class="string">"http://changpengtao.com/home/images/thumbs/05.jpg"</span>,</div><div class="line">      <span class="string">"name"</span>: <span class="string">"活动2"</span>,</div><div class="line">      <span class="string">"time"</span>: <span class="string">"2017-10-9 周五"</span>,</div><div class="line">      <span class="string">"place"</span>: <span class="string">"上海"</span>,</div><div class="line">      <span class="string">"state"</span>: <span class="string">"已开始"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="string">"img"</span>: <span class="string">"http://changpengtao.com/home/images/thumbs/07.jpg"</span>,</div><div class="line">      <span class="string">"name"</span>: <span class="string">"活动3"</span>,</div><div class="line">      <span class="string">"time"</span>: <span class="string">"2017-12-9 周五"</span>,</div><div class="line">      <span class="string">"place"</span>: <span class="string">"郑州"</span>,</div><div class="line">      <span class="string">"state"</span>: <span class="string">"未开始"</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![image](http://image.blog.changpengtao.com/vue-resourse.png)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/22/列表点击显示更多/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1430,7 +1576,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
