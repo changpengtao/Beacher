@@ -3,6 +3,28 @@
   
     
     <entry>
+      <title><![CDATA[Hexo教程]]></title>
+      <url>/2017/09/12/%E4%B8%8D%E5%81%9C%E7%9A%84%E5%8F%98%E6%8D%A2%E5%86%85%E5%AE%B9/</url>
+      <content type="html"><![CDATA[<h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   var arr = [</div><div class="line">	[1, 2, 3, 6],</div><div class="line">	[4, 5, 6, 15],</div><div class="line">	[7, 8, 9, 24],</div><div class="line">	[10, 11, 12, 33]</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="js"><a href="#js" class="headerlink" title="js"></a>js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">   setInterval(<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">	<span class="keyword">if</span>(currentIndex &gt;= arr.length) &#123;</div><div class="line">		currentIndex = 0</div><div class="line">	&#125;</div><div class="line">	var obj = $(<span class="string">".a"</span>)[0];</div><div class="line">	$(<span class="string">".a"</span>).text(arr[currentIndex][3])</div><div class="line">	$(<span class="string">".b"</span>).text(arr[currentIndex][2])</div><div class="line">	$(<span class="string">".c"</span>).text(arr[currentIndex][1])</div><div class="line">	$(<span class="string">".d"</span>).text(arr[currentIndex][0])</div><div class="line">	currentIndex += 1;</div><div class="line"></div><div class="line">&#125;, 1000);</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> jquery </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JQuery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[vue-resourse 实例]]></title>
       <url>/2017/09/11/vue-resourse%E5%B0%86json%E8%BE%93%E5%87%BA%E5%AE%9E%E4%BE%8B/</url>
       <content type="html"><![CDATA[<h3 id="vue-resourse将获取到的json输出"><a href="#vue-resourse将获取到的json输出" class="headerlink" title="vue-resourse将获取到的json输出"></a>vue-resourse将获取到的json输出</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">本地数据要放在 static 文件下</div></pre></td></tr></table></figure>
