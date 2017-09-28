@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失”">
+<meta name="description" content="类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失” 演示链接">
 <meta name="keywords" content="jquery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="列表点击显示更多">
 <meta property="og:url" content="http://yoursite.com/2017/08/22/列表点击显示更多/index.html">
 <meta property="og:site_name" content="Chry Blog">
-<meta property="og:description" content="类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失”">
+<meta property="og:description" content="类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失” 演示链接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-23T09:26:12.791Z">
+<meta property="og:updated_time" content="2017-09-28T03:47:01.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="列表点击显示更多">
-<meta name="twitter:description" content="类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失”">
+<meta name="twitter:description" content="类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失” 演示链接">
 
 
 
@@ -622,7 +622,7 @@
 
       
         <p>类似于新闻列表，点击更多时加载几条新闻，当已加载全部新闻后“更多消失”</p>
-<a id="more"></a>
+<p><a href="http://changpengtao.com/blogcase/%E5%88%97%E8%A1%A8%E7%82%B9%E5%87%BB%E6%98%BE%E7%A4%BA%E6%9B%B4%E5%A4%9A.html" target="_blank" rel="external">演示链接</a><br><a id="more"></a></p>
 <h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">   &lt;button&gt;展开&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;ul class=&quot;show&quot;&gt;</div><div class="line">   &lt;li&gt;我是第1个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第2个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第3个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第4个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第5个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第6个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第7个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第8个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第9个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第10个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第11个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第12个&lt;/li&gt;</div><div class="line">   &lt;li&gt;我是第13个&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
 <h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">$(function() &#123;</div><div class="line">		//对页中现有的class=show，在之后添加显示更多条，并绑定点击行为</div><div class="line">	$(&quot;.show&quot;).each(function() &#123;</div><div class="line">		//var showsize =$(this).attr(&quot;num&quot;);</div><div class="line">		var showsize = 5; //显示的个数 </div><div class="line">		var $children = $(this).children(&quot;li&quot;); //所有的li元素</div><div class="line">		if($children.length &gt; showsize) &#123; //如果li的长度大于要求显示的个数</div><div class="line">			for(var i = showsize; i &lt; $children.length; i++) &#123; //	循环出来不显示的个数</div><div class="line">				$children.eq(i).hide();</div><div class="line">			&#125;</div><div class="line">			$(&quot;button&quot;).click(function() &#123;</div><div class="line">				//show($children, showsize)</div><div class="line">				if(show($children, showsize) &lt;= 0) &#123;</div><div class="line">					//如果目标元素已经没有隐藏的子元素了，就隐藏“点击更多的按钮条”</div><div class="line">					$(this).hide();</div><div class="line">				&#125;;</div><div class="line">			&#125;);</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">function show($children, n) &#123;</div><div class="line">	//显示某jquery元素下的前n个隐藏的子元素</div><div class="line">	var $hidden = $children.filter(&quot;:hidden&quot;); //隐藏的元素</div><div class="line">	var cnt = $hidden.length; //隐藏元素的个数</div><div class="line">	for(var i = 0; i &lt; n &amp;&amp; i &lt; cnt; i++) &#123;</div><div class="line">		$hidden.eq(i).show();</div><div class="line">	&#125;</div><div class="line">	return cnt - n; //返回还剩余的隐藏子元素的数量</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
