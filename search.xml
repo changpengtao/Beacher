@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[PHP判断数据类型]]></title>
+      <url>/2018/11/12/PHP%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<h3 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">is_int()        //是否为整型</div><div class="line">is_bool()       //是否为布尔</div><div class="line">is_float()      //是否是浮点</div><div class="line">is_string()     //是否是字符串</div><div class="line">is_array()      //是否是数组</div><div class="line">is_object()     //是否是对象</div><div class="line">is_null()       //是否为空</div><div class="line">is_resource()   //是否为资源</div><div class="line">is_scalar()     //是否为标量</div><div class="line">is_numeric()    //是否为数值类型</div><div class="line">is_callable()   //是否为函数</div><div class="line"></div><div class="line">注：is_types 很好记。is_ 在前后面跟类型即可。</div><div class="line">变量：整型（int） 浮点（<span class="built_in">float</span>）、布尔（bool）、字符串（string）</div><div class="line">混合类型： 数组（array）、对象（object）</div><div class="line">特殊类型：空（null）、 资源（resouce）、回调（callback）</div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> PHP </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> PHP </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[PHP基本]]></title>
+      <url>/2018/11/11/PHP/</url>
+      <content type="html"><![CDATA[<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php </div><div class="line">   <span class="built_in">echo</span> <span class="string">'PHP学到家，走到哪儿都不怕！'</span>;</div><div class="line">   ?&gt;</div></pre></td></tr></table></figure>
+<h3 id="变量的基本操作"><a href="#变量的基本操作" class="headerlink" title="变量的基本操作"></a>变量的基本操作</h3><h4 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$bianliang1</span> = <span class="string">'我是一个变量'</span>;</div><div class="line"><span class="variable">$bianliang2</span> = <span class="string">"我是两个变量"</span>;</div><div class="line"></div><div class="line"><span class="variable">$bianliang3</span> = <span class="string">"<span class="variable">$bianliang1</span> 我是三个变量"</span>;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$bianliang3</span> //输出 <span class="string">"我是一个变量 我是三个变量"</span></div><div class="line"></div><div class="line"><span class="variable">$bianliang4</span> = <span class="string">'$bianliang2 我是四个变量'</span>;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$bianliang4</span> //输出 <span class="string">"<span class="variable">$bianliang2</span> 我是四个变量"</span></div><div class="line"></div><div class="line">*** 双引号会解析变量里面的变量 </div><div class="line">    单引号不会解析变量里面的变量</div></pre></td></tr></table></figure>
+<h4 id="变量的操作"><a href="#变量的操作" class="headerlink" title="变量的操作"></a>变量的操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var_dump()  //打印显示一个变量的内容与结构以及类型</div><div class="line"><span class="built_in">unset</span>()     //销毁变量</div><div class="line">isset()     //传入一个或多个变量，一个为null，返回<span class="literal">false</span>，否则返回<span class="literal">true</span></div><div class="line">empty()     //传入一个变量，如果变量为<span class="literal">false</span>或null则返回<span class="literal">false</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> PHP </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> PHP </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于时间处理]]></title>
       <url>/2018/06/29/%E6%97%B6%E9%97%B4/</url>
       <content type="html"><![CDATA[<h3 id="当前日期时间（并归零）"><a href="#当前日期时间（并归零）" class="headerlink" title="当前日期时间（并归零）"></a>当前日期时间（并归零）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   var today = new Date(); // 当前时间</div><div class="line">today.setHours(0);</div><div class="line">today.setMinutes(0);</div><div class="line">today.setSeconds(0);</div><div class="line">today.setMilliseconds(0); //当前日期归零  2018-6-29 00:00:00</div></pre></td></tr></table></figure>
