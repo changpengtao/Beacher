@@ -3,6 +3,51 @@
   
     
     <entry>
+      <title><![CDATA[第一篇文章]]></title>
+      <url>/2018/11/12/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[写博客、发布文章]]></title>
+      <url>/2018/11/12/hello-world/</url>
+      <content type="html"><![CDATA[<p>用 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! 写博客！</p>
+<h2 id="新建一篇博客"><a href="#新建一篇博客" class="headerlink" title="新建一篇博客"></a>新建一篇博客</h2><h3 id="执行下面的命令"><a href="#执行下面的命令" class="headerlink" title="执行下面的命令"></a>执行下面的命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"第一篇文章"</span></div></pre></td></tr></table></figure>
+<h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g   // 生成</div></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d   // 部署到github</div></pre></td></tr></table></figure>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于时间处理]]></title>
+      <url>/2018/06/29/%E6%97%B6%E9%97%B4/</url>
+      <content type="html"><![CDATA[<h3 id="当前日期时间（并归零）"><a href="#当前日期时间（并归零）" class="headerlink" title="当前日期时间（并归零）"></a>当前日期时间（并归零）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   var today = new Date(); // 当前时间</div><div class="line">today.setHours(0);</div><div class="line">today.setMinutes(0);</div><div class="line">today.setSeconds(0);</div><div class="line">today.setMilliseconds(0); //当前日期归零  2018-6-29 00:00:00</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="昨日0点和昨日23-59-59"><a href="#昨日0点和昨日23-59-59" class="headerlink" title="昨日0点和昨日23:59:59"></a>昨日0点和昨日23:59:59</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   var oneday = 1000 * 60 * 60 * 24; //获取一天的时间戳</div><div class="line">var yesterday = new Date(today - oneday); // 昨天0点 当日0点 减 一天时间 等于昨日0点</div><div class="line">var yesterday23 = getDate(new Date(yesterday.getTime() + oneday - 1)); //昨天23点59:59</div><div class="line">var yesterday0 = getDate(yesterday); //昨日0点 格式化</div></pre></td></tr></table></figure>
+<h3 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> add0(m) &#123;</div><div class="line">	<span class="built_in">return</span> m &lt; 10 ? <span class="string">'0'</span> + m : m</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">function</span> getDate(shijianchuo) &#123;</div><div class="line">	//shijianchuo是整数，否则要parseInt转换  </div><div class="line">	var time = new Date(shijianchuo);</div><div class="line">	var y = time.getFullYear();</div><div class="line">	var m = time.getMonth() + 1;</div><div class="line">	var d = time.getDate();</div><div class="line">	var h = time.getHours();</div><div class="line">	var mm = time.getMinutes();</div><div class="line">	var s = time.getSeconds();</div><div class="line">	<span class="built_in">return</span> y + <span class="string">'-'</span> + add0(m) + <span class="string">'-'</span> + add0(d) + <span class="string">' '</span> + add0(h) + <span class="string">':'</span> + add0(mm) + <span class="string">':'</span> + add0(s);</div><div class="line">&#125;; //时间戳转时间</div><div class="line"></div><div class="line">getDate()//获取时间戳</div></pre></td></tr></table></figure>
+<h3 id="获取服务器时间"><a href="#获取服务器时间" class="headerlink" title="获取服务器时间"></a>获取服务器时间</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">	success: <span class="keyword">function</span>(result, status, xhr) &#123;</div><div class="line">		var date = new Date(xhr.getResponseHeader(<span class="string">"Date"</span>));//获取到的服务器时间</div><div class="line">		date.getTime()//转换成时间戳  方便比较   例如：1518511624000</div><div class="line">		getDate(date.getTime()) //转换成正常的时间格式  例如：2018-02-13 16:42:30</div><div class="line"></div><div class="line">		console.log(<span class="string">"默认时间:"</span> + date);</div><div class="line">		console.log(<span class="string">"时间戳:"</span> + date.getTime());</div><div class="line">		console.log(<span class="string">"时间:"</span> + getDate(date.getTime()));</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 时间 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jquery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[HTML5文档结构]]></title>
       <url>/2017/10/24/HTML5%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84/</url>
       <content type="html"><![CDATA[<p>HHML5完整的文档结构</p>
@@ -273,18 +318,6 @@
             <tag> page </tag>
             
         </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[写博客、发布文章]]></title>
-      <url>/2017/08/03/hello-world/</url>
-      <content type="html"><![CDATA[<p>用 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! 写博客！</p>
-<h2 id="新建一篇博客"><a href="#新建一篇博客" class="headerlink" title="新建一篇博客"></a>新建一篇博客</h2><h3 id="执行下面的命令"><a href="#执行下面的命令" class="headerlink" title="执行下面的命令"></a>执行下面的命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"第一篇文章"</span></div></pre></td></tr></table></figure>
-<h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g   // 生成</div></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d   // 部署到github</div></pre></td></tr></table></figure>
-]]></content>
-      
         
     </entry>
     
